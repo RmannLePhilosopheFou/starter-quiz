@@ -10,9 +10,12 @@ export class QuizComponent implements OnInit {
 
   @Input()
   quiz: Quiz;
+  delete = false;
 
   @Output()
   quizSelected: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output()
+  quizDeleted: EventEmitter<Quiz> = new EventEmitter<Quiz>();
 
   constructor() {
   }
@@ -20,7 +23,11 @@ export class QuizComponent implements OnInit {
   ngOnInit() {
   }
 
-  selectQuiz() {
+   selectQuiz() {
     this.quizSelected.emit(true);
+  }
+  deleteQuiz() {
+    this.quizDeleted.emit(this.quiz);
+    this.delete = false;
   }
 }

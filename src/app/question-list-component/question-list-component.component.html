@@ -1,0 +1,7 @@
+<app-question-form-component [id]="id"></app-question-form-component>
+<div class="card-columns">
+  <div class="quiz" *ngFor="let question of quizCourant.questions" >
+ <app-questions-component [question]="question" (QuestionDeleted)="deleteQuestion($event)"></app-questions-component>
+  </div>
+
+</div>

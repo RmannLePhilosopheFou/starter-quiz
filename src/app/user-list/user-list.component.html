@@ -1,0 +1,8 @@
+<app-users> </app-users>
+
+<div class="col-sm-8">
+  <ul class="list-group" *ngFor="let user of users">
+   <app-user-show [user]="user" (UserDeleted)="userDelete($event)"></app-user-show>
+  </ul>
+
+</div>

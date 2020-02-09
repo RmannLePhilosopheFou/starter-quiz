@@ -3,7 +3,7 @@ import { QuizService } from '../../../services/quiz.service';
 import { Quiz } from '../../../models/quiz.model';
 
 @Component({
-  selector: 'app-quiz-list',
+  selector: ' app-quiz-list',
   templateUrl: './quiz-list.component.html',
   styleUrls: ['./quiz-list.component.scss']
 })
@@ -20,5 +20,9 @@ export class QuizListComponent implements OnInit {
 
   quizSelected(selected: boolean) {
     console.log('event received from child:', selected);
+  }
+  deleteQuizz(quiz: Quiz) {
+console.log(quiz);
+this.quizService.deleteQuiz(quiz);
   }
 }

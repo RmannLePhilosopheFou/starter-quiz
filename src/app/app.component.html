@@ -1,5 +1,17 @@
+<nav class="navbar navbar-brand">
+  <div class="container-fluid">
+  <ul class="nav navbar-nav">
+    <li routerLinkActive="active"> <a routerLink="/"> Main </a></li>
+    <li routerLinkActive="active"> <a routerLink="edit-quiz"> Edit quiz </a></li>
+    <li routerLinkActive="active"> <a routerLink="users"> Users </a></li>
+
+  </ul>
+  </div>
+
+</nav>
+
 <app-header></app-header>
+
 <div class="main-content">
-    <app-quiz-form></app-quiz-form>
-    <app-quiz-list></app-quiz-list>
+  <router-outlet></router-outlet>
 </div>

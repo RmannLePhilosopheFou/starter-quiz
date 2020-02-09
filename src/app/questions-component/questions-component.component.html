@@ -1,0 +1,7 @@
+<div  class="card bg-light" style="height:300px; width:300px; border-radius: 4px; display: inline-block">
+ <b><h4 [ngStyle]="{color: 'red'}"> {{question.label}}</h4></b>
+  <p [ngStyle]="{color: 'blue'}" *ngFor="let answer of question.answers; let i=index ">
+      <span>{{i}}- {{answer.value}} <input *ngIf="answer.isCorrect" type="checkbox" checked></span>
+     </p>
+  <button class="btn btn-danger " (click)="deleteQuestion()"> Delete</button>
+</div>

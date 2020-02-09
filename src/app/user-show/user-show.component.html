@@ -1,0 +1,9 @@
+<div class="card" style=" background-color:gray;height: 250px; width: 400px" >
+  <h2 [ngStyle]="{color:'blue'}">
+  Nom:  {{user.name}}
+  </h2>
+  Prenom: <span> {{user.prenom}}</span>
+  Adress: <span> {{user.adress}}</span>
+  Email: <span> {{user.email}}</span>
+</div>
+<button class="btn-danger" (click)="delete()"> Delete</button>

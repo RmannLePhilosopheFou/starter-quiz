@@ -1,7 +1,32 @@
-<div class="card">
+<div class="card" style="background-color: deepskyblue">
+  <span>{{quiz.theme}} </span>
     <h2>
-        <i class="fab fa-leanpub"></i>
-        {{quiz.name}}
+      <i *ngIf="quiz.theme==='Actor'" class="fab fa-leanpub"></i>
+      <i *ngIf="quiz.theme==='Basket-Ball'" class="fas fa-basketball-ball"></i>
+
+
+      {{quiz.name}}
     </h2>
-    <button class="button-card" (click)="selectQuiz()">Select</button>
+  <h4>{{quiz.questions?.length}} <span *ngIf="quiz.questions?.length>1">  questions</span>
+    <span *ngIf="quiz.questions?.length===1 || quiz.questions?.length===0 ">  questions</span> </h4>
+  <div class="panel-footer" style="background-color: darkcyan">
+
+    <span *ngIf="delete">
+      <span>Are you sure to delete this quiz?</span>
+      <div>
+       <button class="btn btn-success" (click)="delete=false">No</button>
+       <button class="btn btn-danger" (click)="deleteQuiz()">Yes</button>
+      </div>
+    </span>
+      <button  *ngIf="!delete" class="btn btn-danger" (click)="delete=true">Delete</button>
+
+
+    <button class="btn btn-success" (click)="selectQuiz()">Select</button>
+
+
+
+  </div>
+  <h6 *ngIf="quiz.date!=null"> Date de création: {{quiz.date | date}}</h6>
+  <br>
+  <a  class="navbar-right" [ngStyle]="{color:'red'}" routerLink="/edit-quiz/{{quiz.id}}"> Editer un quiz</a>
 </div>
